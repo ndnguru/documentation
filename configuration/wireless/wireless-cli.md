@@ -70,6 +70,17 @@ network={
 
 You can verify if it has successfully connected using `ifconfig wlan0`. If the `inet addr` field has an address beside it, the Pi has connected to the network. If not, check your password and ESSID are correct.   
 
+## Public Networks with no passphrase
+
+If you intend to join a network with no passphrase, you need to add the `key_mgmt` parameter to the configuration block
+
+```
+network={
+    ssid="testing"
+    key_mgmt=NONE
+}
+```
+
 ## Adding multiple wireless network configurations
 
 On recent versions of Raspbian, it is possible to set up multiple configurations for wireless networking. For example, you could set up one for home and one for school. 
