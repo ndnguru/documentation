@@ -56,6 +56,18 @@ At this point, `wpa-supplicant` will normally notice a change has occurred withi
 
 You can verify if it has successfully connected using `ifconfig wlan0`. If the `inet addr` field has an address beside it, the Pi has connected to the network. If not, check your password and ESSID are correct.  
 
+## Public Networks (no passphrase
+
+If you are using a public unsecured network, an extra option in the `wpa_supplicant file`, `key_mgmt`, may help connection.
+
+```
+network={
+    ssid="somePublicNetwork"
+    key_mgmt=NONE
+}
+```
+
+
 ## Hidden Networks
 
 If you are using a hidden network, an extra option in the `wpa_supplicant file`, `scan_ssid`, may help connection.
